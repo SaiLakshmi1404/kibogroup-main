@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Target, Eye, Gem, Users, ArrowRight } from "lucide-react";
 // import heroCity from "@/assets/hero-city.jpg";
-import about from "@/assets/bg/about.png";
+import ab from "@/assets/bg/ab.png";
 import c from "@/assets/team/c.png";
 
 export const Route = createFileRoute("/about")({
@@ -68,7 +68,7 @@ function About() {
       <section className="relative overflow-hidden border-b border-border">
 <div className="absolute inset-0">
   <img
-    src={about}
+    src={ab}
     alt=""
     className="h-full w-full object-cover opacity-55 brightness-110 contrast-105"
   />
