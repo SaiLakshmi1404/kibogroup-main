@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Target, Eye, Gem, Users, ArrowRight } from "lucide-react";
 // import heroCity from "@/assets/hero-city.jpg";
-import ab from "@/assets/bg/ab.png";
-import c from "@/assets/team/c.png";
+import ab from "@/Assets/bg/ab.png";
+import c from "@/Assets/team/c.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

@@ -66,7 +66,7 @@ glimpse :[
     // time: "11:30 AM",
     title: "Design & Engineering",
     description:
-      "Teams collaborate on drawings, reviews to ensure every project meets quality standards.",
+      "Teams collaborate on drawings, reviews to ensure everys project meets quality standards.",
     icon: "draftingcompass",
   },
 
