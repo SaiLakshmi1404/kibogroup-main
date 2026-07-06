@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { ArrowRight,  Rocket,
   Handshake, Cloud, ShieldCheck, Cpu, Smartphone, Database, Bot, Workflow, Award, Globe2, Users, Briefcase, Quote } from "lucide-react";
-import heroCity from "@/assets/hero-city.jpg";
+import heroCity from "@/Assets/hero-city.jpg";
 import { ventures } from "@/lib/ventures";
 import chairman from "@/Assets/team/chairman.png"
 import pm from "@/Assets/team/pm.png"
