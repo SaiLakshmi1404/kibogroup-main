@@ -9,6 +9,7 @@ import pm from "@/Assets/team/pm.png"
 import md from "@/Assets/team/md.jpeg"
 import oh from "@/Assets/team/oh.png"
 import as from "@/Assets/team/as.png"
+import bd from "@/Assets/team/bd.jpeg"
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -60,11 +61,19 @@ const team = [
     quote:
       "Oversees human resources and operations, ensuring smooth coordination, efficient workflows, and a positive organizational culture within the team.",},
 
+  { name: "Mrs. Nazia Ahmed", 
+    role: "Business Development Head",
+    photo:bd,    
+    quote:
+      "leads strategic growth by identifying new markets, establishing high-level partnerships, and directing teams to drive long-term revenue and market expansion.",
+    },
+
   { name: "SaiLakshmi Chekuru", 
     role: "Software Engineer",
     photo:as,    
     quote:
-      "Contributes to front-end design and development using Next.js and Tailwind CSS, bringing creativity and precision to every interface she builds.",},
+      "Contributes to front-end design and development using Next.js and Tailwind CSS, bringing creativity and precision to every interface she builds.",
+    },
 ];
 
 function Home() {

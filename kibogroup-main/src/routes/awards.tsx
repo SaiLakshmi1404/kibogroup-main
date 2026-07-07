@@ -32,7 +32,7 @@ const awards = [
     year: "2026",
     image:a1,
     description:
-      "Recognized for excellence in innovation.",
+      "Global ICon Award for Most Dynamic & Diversified Business Conglomerate of the year.",
   },
   // {
   //   title: "Innovation Excellence Award",
