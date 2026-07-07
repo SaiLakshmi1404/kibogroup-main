@@ -1,7 +1,7 @@
 [build]
   base = "kibogroup-main"
   command = "npm run build"
-  publish = "kibogroup-main/dist"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
