@@ -1,0 +1,9 @@
+[build]
+  base = "kibogroup-main"
+  command = "npm run build"
+  publish = "kibogroup-main/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
