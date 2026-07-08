@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import Lightbox from "@/components/ui/Lightbox";
 
+
 // Finds every image inside Assets/kibo-photos
-const images = import.meta.glob(
+// This creates a map of { filepath: loaderFunction } — NOT the actual images yet.
+// Each loaderFunction is like a buzzer — calling it later fetches the real image.
+const imageLoaders = import.meta.glob(
   "@/assets/kibo-photos/**/*.{jpg,jpeg,png,webp}",
   {
-    eager: true,
+    // eager: true,
     import: "default",
   }
-) as Record<string, string>;
+) as Record<string, () => Promise<string>>;
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -89,20 +92,37 @@ const items = [
 ];
 
 // Returns the cover image for an event
-function getCoverImage(folder: string) {
-  const path = Object.keys(images).find((img) =>
-    img.includes(`${folder}/cover`)
-  );
+// function getCoverImage(folder: string) {
+//   const path = Object.keys(images).find((img) =>
+//     img.includes(`${folder}/cover`)
+//   );
 
-  return path ? images[path] : "";
-}
+//   return path ? images[path] : "";
+// }
 
 // Returns every photo inside the selected event folder
-function getEventImages(folder: string) {
-  return Object.entries(images)
-    .filter(([path]) => path.includes(`${folder}/`))
-    .filter(([path]) => !path.includes("cover"))
-    .map(([, image]) => image);
+// function getEventImages(folder: string) {
+//   return Object.entries(images)
+//     .filter(([path]) => path.includes(`${folder}/`))
+//     .filter(([path]) => !path.includes("cover"))
+//     .map(([, image]) => image);
+// }
+
+// Finds the loader function for a folder's cover image, then "pushes the buzzer"
+// (calls it) to actually get the image. Returns a Promise, so callers must await it.
+async function loadCoverImage(folder: string): Promise<string> {
+  const path = Object.keys(imageLoaders).find((p) => p.includes(`${folder}/cover`));
+  if (!path) return "";
+  return await imageLoaders[path](); // "await" = wait for the buzzer, then get the food
+}
+
+// Loads ALL photos for one folder (only called when that folder is actually clicked)
+async function loadEventImages(folder: string): Promise<string[]> {
+  const matchingPaths = Object.keys(imageLoaders).filter(
+    (p) => p.includes(`${folder}/`) && !p.includes("cover")
+  );
+  // Promise.all = "wait for ALL these buzzers at once", instead of one at a time
+  return await Promise.all(matchingPaths.map((p) => imageLoaders[p]()));
 }
 
 function Gallery(){
@@ -110,14 +130,45 @@ function Gallery(){
     const [selectedImages, setSelectedImages] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    
-    function openGallery(folder: string) {
-      const photos = getEventImages(folder);
+// Added newly after putting eager :false or removing it 
 
-      setSelectedImages(photos);
-      setCurrentIndex(0);
-      setOpen(true);
+    const [covers, setCovers] = useState<Record<string, string>>({});
+  const [loadingFolder, setLoadingFolder] = useState<string | null>(null);
+    
+    // function openGallery(folder: string) {
+    //   const photos = getEventImages(folder);
+
+    //   setSelectedImages(photos);
+    //   setCurrentIndex(0);
+    //   setOpen(true);
+    // }
+
+
+  // useEffect = "run this code once, when the component first appears on screen"
+  // We only need to load the 10 COVER images upfront — much lighter than all photos.
+  useEffect(() => {
+    async function loadAllCovers() {
+      const entries = await Promise.all(
+        items.map(async (it) => {
+          const src = await loadCoverImage(it.folder);
+          return [it.folder, src] as const;
+        })
+      );
+      setCovers(Object.fromEntries(entries));
     }
+    loadAllCovers();
+  }, []); // empty [] means "only run this once"
+
+  // Called when user clicks an event tile
+  async function openGallery(folder: string) {
+    setLoadingFolder(folder); // (optional: you could show a spinner using this)
+    const photos = await loadEventImages(folder); // NOW we fetch that folder's photos
+    setSelectedImages(photos);
+    setCurrentIndex(0);
+    setOpen(true);
+    setLoadingFolder(null);
+  }
+
   return (
     <>
            <section className="border-b border-border">
@@ -144,12 +195,16 @@ function Gallery(){
                   i === 0 ? "col-span-2 row-span-2" : i === 3 ? "md:col-span-2" : ""
                 }`}
               >
+                {covers[it.folder] && (
                   <img
-                      src={getCoverImage(it.folder)}
+                      // src={getCoverImage(it.folder)}
+                      src={covers[it.folder]}
+                      loading="lazy"
                       decoding="async"
                       alt={it.title}
                       className="absolute inset-0 h-full w-full object-cover"
                     />
+                    )}
                 <div
                   className="absolute inset-0 opacity-30"
                   style={{

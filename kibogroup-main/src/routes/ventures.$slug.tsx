@@ -27,6 +27,9 @@ export const Route = createFileRoute("/ventures/$slug")({
           { property: "og:description", content: loaderData.venture.tagline },
         ]
       : [],
+        links: loaderData
+    ? [{ rel: "preload", href: loaderData.venture.background, as: "image" }]
+    : [],
   }),
   component: VenturePage,
   notFoundComponent: () => (
@@ -297,7 +300,7 @@ function VenturePage() {
                 projects={venture.featuredProjects}
             />
         )}
-        
+
  {/* divider */}
   <div className="container-page">
     <div className="h-px bg-border mt-4"></div>

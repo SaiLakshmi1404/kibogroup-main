@@ -10,6 +10,9 @@ export const Route = createFileRoute("/contact")({
       { title: "Get In Touch — Kibo Group" },
       { name: "description", content: "Talk to Kibo Group about your next project. Reach our global teams across the Middle East, UK and Asia." },
     ],
+       links: [
+      { rel: "preload", href: getintouch, as: "image" },
+    ],
   }),
   component: Contact,
 });
@@ -31,7 +34,7 @@ function Contact() {
     <>
       <section className=" relative border-b border-border overflow-hidden">
      <div className="container-page relative z-10 py-16 md:py-20">
-           <img src={getintouch} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20"  />
+           <img src={getintouch} alt=""  fetchPriority= "high" className="absolute inset-0 h-full w-full object-cover opacity-20"  />
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">Get In Touch</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Let's build <span className="text-gradient-gold">what's next.</span>

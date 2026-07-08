@@ -14,6 +14,9 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    plugins: [netlify()],
+    plugins: [
+      // netlify(),
+      
+    ],
   },
 });
