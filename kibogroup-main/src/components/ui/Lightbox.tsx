@@ -1,41 +1,6 @@
 import { X, ChevronLeft, ChevronRight,  ZoomIn, ZoomOut,} from "lucide-react";
 import { useState } from "react";
 
-// interface LightboxProps {
-//   open: boolean;
-//   onClose: () => void;
-//   images: string[];
-//   currentIndex: number;
-//   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
-// }
-
-// export default function Lightbox({
-//   open,
-//   onClose,
-//   images,
-//   currentIndex,
-//   setCurrentIndex,
-// }: LightboxProps) {
-
-//   // set zoom 
-//   const [zoom, setZoom] = useState(1);
-
-//   // Don't render anything if the lightbox is closed
-//   if (!open) return null;
-
-//   // Previous image
-//   const prevImage = () => {
-//     setCurrentIndex((prev) =>
-//       prev === 0 ? images.length - 1 : prev - 1
-//     );
-//   };
-
-//   // Next image
-//   const nextImage = () => {
-//     setCurrentIndex((prev) =>
-//       prev === images.length - 1 ? 0 : prev + 1
-//     );
-//   };
 
 interface LightboxProps {
   open: boolean;

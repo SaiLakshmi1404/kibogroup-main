@@ -70,7 +70,7 @@ function About() {
   <img
     src={ab}
     alt=""
-       loading="lazy"
+  
        decoding="async"
     className="h-full w-full object-cover opacity-55 brightness-110 contrast-105"
   />
