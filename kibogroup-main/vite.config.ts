@@ -15,7 +15,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      // netlify(),
+      netlify(),
       
     ],
   },
