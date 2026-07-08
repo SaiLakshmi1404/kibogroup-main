@@ -297,6 +297,11 @@ function VenturePage() {
                 projects={venture.featuredProjects}
             />
         )}
+ {/* divider */}
+  <div className="container-page">
+    <div className="h-px bg-border mt-4"></div>
+</div>
+
 
 
 
