@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
-import getintouch from "@/Assets/bg/getintouchbg.jpg"
+import getintouch from "@/assets/bg/getintouchbg.webp"
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
