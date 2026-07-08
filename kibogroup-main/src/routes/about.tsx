@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Target, Eye, Gem, Users, ArrowRight } from "lucide-react";
-// import heroCity from "@/assets/hero-city.jpg";
-import ab from "@/Assets/bg/ab.png";
-import c from "@/Assets/team/c.png";
+
+import ab from "@/assets/bg/ab.png";
+import c from "@/assets/team/c.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -70,6 +70,8 @@ function About() {
   <img
     src={ab}
     alt=""
+       loading="lazy"
+       decoding="async"
     className="h-full w-full object-cover opacity-55 brightness-110 contrast-105"
   />
 
@@ -193,6 +195,8 @@ function About() {
   <img
     src={c}
     alt="Chairman"
+       loading="lazy"
+       decoding="async"
     className="
       relative z-10
       lg:absolute

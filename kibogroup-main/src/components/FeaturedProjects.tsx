@@ -50,6 +50,8 @@ export default function FeaturedProjects({
                 <img
                   src={project.image}
                   // alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="h-64 w-full object-cover transition duration-500 group-hover:scale-110"
                 />
 

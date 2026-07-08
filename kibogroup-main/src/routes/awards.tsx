@@ -4,12 +4,11 @@ import Lightbox from "@/components/ui/Lightbox";
 
 // Awards
 
-import a1 from "@/Assets/awards/a1.png"
-// import a2 from "@/Assets/awards/a2.jpeg"
-// import a3 from "@/Assets/awards/a3.jpeg"
-import a4 from "@/Assets/awards/a4.jpeg"
-import a5 from "@/Assets/awards/a5.jpeg"
-import a6 from "@/Assets/awards/a6.jpeg"
+import a2 from "@/assets/awards/a2.webp"
+
+import a4 from "@/assets/awards/a4.jpeg"
+import a5 from "@/assets/awards/a5.avif"
+import a6 from "@/assets/awards/a6 .webp"
 
 
 
@@ -17,12 +16,12 @@ import a6 from "@/Assets/awards/a6.jpeg"
 
 // Magazines
 
-import m1 from "@/Assets/mediacovearge/m1.jpeg"
-import m2 from "@/Assets/mediacovearge/m2.jpeg"
-import m3 from "@/Assets/mediacovearge/m3.jpeg"
-import m4 from "@/Assets/mediacovearge/m4.jpeg"
-import m5 from "@/Assets/mediacovearge/m5.jpeg"
-import m6 from "@/Assets/mediacovearge/m6.jpeg"
+import m1 from "@/assets/mediacovearge/m1.webp"
+import m2 from "@/assets/mediacovearge/m2.webp"
+import m3 from "@/assets/mediacovearge/m3.jpeg"
+import m4 from "@/assets/mediacovearge/m4.webp"
+import m5 from "@/assets/mediacovearge/m5.webp"
+import m6 from "@/assets/mediacovearge/m6.jpeg"
 
 
 
@@ -30,24 +29,11 @@ const awards = [
   {
     title: "Global Icon Award",
     year: "2026",
-    image:a1,
+    image:a2,
     description:
       "Global ICon Award for Most Dynamic & Diversified Business Conglomerate of the year.",
   },
-  // {
-  //   title: "Innovation Excellence Award",
-  //   year: "2024",
-  //   image: a2,
-  //   description:
-  //     "Awarded for delivering cutting-edge enterprise solutions.",
-  // },
-  // {
-  //   title: "Business Leadership Award",
-  //   year: "2023",
-  //   image:a3,
-  //   description:
-  //     "Honored for outstanding leadership and business growth.",
-  // },
+ 
     {
     title: "Telangana & Andhra Achievers Award",
     year: "2026",
@@ -184,6 +170,8 @@ function Awards() {
                 <img
                     src={award.image}
                     alt={award.title}
+                      loading="lazy"
+                      decoding="async"
                     className="h-60 w-full object-cover"
                 />
 
@@ -244,6 +232,8 @@ function Awards() {
                     <img
                         src={item.image}
                         alt={item.title}
+                          loading="lazy"
+                          decoding="async"
                         className="h-72 w-full object-cover"
                     />
 

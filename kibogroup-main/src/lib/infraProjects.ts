@@ -1,34 +1,23 @@
-// import { createFileRoute } from '@tanstack/react-router'
-
-// export const Route = createFileRoute('/infraProjects')({
-//   component: RouteComponent,
-// })
-
-// function RouteComponent() {
-//   return <div>Hello "/infraProjects"!</div>
-// }
 
 
-import f1 from "@/Assets/infra/f1.png";
-import f2 from "@/Assets/infra/f2.png";
-import f3 from "@/Assets/infra/f3.png";
-import f4 from "@/Assets/infra/f4.png";
-import f5 from "@/Assets/infra/f5.png";
-import f6 from "@/Assets/infra/f6.png";
-import f7 from "@/Assets/infra/f7.png";
-import f8 from "@/Assets/infra/f8.png";
-import f9 from "@/Assets/infra/f9.png";
-import f10 from "@/Assets/infra/f10.png";
-import f12 from "@/Assets/infra/f12.png";
-import f13 from "@/Assets/infra/f13.png";
-import f14 from "@/Assets/infra/f14.png";
-import f15 from "@/Assets/infra/f15.png";
-import f16 from "@/Assets/infra/f16.png";
-import f17 from "@/Assets/infra/f17.png";
-import f18 from "@/Assets/infra/f18.png";
-import f19 from "@/Assets/infra/f19.png";
-import f20 from "@/Assets/infra/f20.png";
-import f11 from "@/Assets/infra/f11.png";
+
+import f1 from "@/assets/infra/f1.webp";
+import f2 from "@/assets/infra/f2.webp";
+import f3 from "@/assets/infra/f3.webp";
+import f4 from "@/assets/infra/f4.webp";
+import f5 from "@/assets/infra/f5.webp";
+import f6 from "@/assets/infra/f6.webp";
+import f7 from "@/assets/infra/f7.webp";
+import f8 from "@/assets/infra/f8.webp";
+import f9 from "@/assets/infra/f9.webp";
+import f10 from "@/assets/infra/f10.webp";
+import f11 from "@/assets/infra/f11.webp";
+import f12 from "@/assets/infra/f12.webp";
+import f13 from "@/assets/infra/f13.webp";
+import f14 from "@/assets/infra/f14.webp";
+import f15 from "@/assets/infra/f15.webp";
+
+
 
 export interface Project {
     // title: string;
@@ -118,30 +107,5 @@ export const infraProjects : Project[]= [
     // category: "Hospitality",
     image: f15,
   },
-    {
-    // title: "Hospitality Development",
-    // category: "Hospitality",
-    image: f16,
-  },
-    {
-    // title: "Hospitality Development",
-    // category: "Hospitality",
-    image: f17,
-  },
 
-  {
-    // title: "Hospitality Development",
-    // category: "Hospitality",
-    image: f18,
-  },
-    {
-    // title: "Hospitality Development",
-    // category: "Hospitality",
-    image: f19,
-  },
-    {
-    // title: "Hospitality Development",
-    // category: "Hospitality",
-    image: f20,
-  },
 ];

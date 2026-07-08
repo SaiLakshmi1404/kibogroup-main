@@ -1,5 +1,5 @@
-import kt from "@/Assets/logos/kt.jpg";
-import ktbg from "@/Assets/bg/ktbg.jpeg";
+import kt from "@/assets/logos/kt.jpg";
+import ktbg from "@/assets/bg/ktbg.jpeg";
 
 
 

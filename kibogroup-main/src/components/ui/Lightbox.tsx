@@ -125,6 +125,8 @@ export default function Lightbox({
       <img
         src={images[index]}
         alt=""
+        loading="lazy"
+        decoding="async"
         className="max-h-[85vh] max-w-[90vw] rounded-xl object-contain transition-transform duration-300"
         style={{
              transform: `scale(${zoom})`,

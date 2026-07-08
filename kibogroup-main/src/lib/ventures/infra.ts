@@ -1,5 +1,5 @@
-import ki from "@/Assets/logos/ki.png";
-import kibg from "@/Assets/bg/kibg.png";
+import ki from "@/assets/logos/ki.webp";
+import kibg from "@/assets/bg/kibg.webp";
 
 
 import { infraProjects } from ".././infraProjects";

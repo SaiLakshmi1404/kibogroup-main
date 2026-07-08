@@ -1,6 +1,6 @@
 
-import ke from "@/Assets/logos/ke.jpeg";
-import kebg from "@/Assets/bg/kebg.webp";
+import ke from "@/assets/logos/ke.jpeg";
+import kebg from "@/assets/bg/kebg.webp";
 
 
 

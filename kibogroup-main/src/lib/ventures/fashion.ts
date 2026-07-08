@@ -1,6 +1,6 @@
 
-import kf from "@/Assets/logos/kf.png";
-import kfbg from "@/Assets/bg/kfbg.png";
+import kf from "@/assets/logos/kf.webp";
+import kfbg from "@/assets/bg/kfbg.webp";
 
 import type { Venture } from "../ventures";
 import {

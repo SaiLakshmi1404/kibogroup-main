@@ -2,14 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { ArrowRight,  Rocket,
   Handshake, Cloud, ShieldCheck, Cpu, Smartphone, Database, Bot, Workflow, Award, Globe2, Users, Briefcase, Quote } from "lucide-react";
-import heroCity from "@/Assets/hero-city.jpg";
+import heroCity from "@/assets/hero-city.jpg";
 import { ventures } from "@/lib/ventures";
-import chairman from "@/Assets/team/chairman.png"
-import pm from "@/Assets/team/pm.png"
-import md from "@/Assets/team/md.jpeg"
-import oh from "@/Assets/team/oh.png"
-import as from "@/Assets/team/as.png"
-import bd from "@/Assets/team/bd.jpeg"
+import ch from "@/assets/team/ch.webp"
+import pm from "@/assets/team/pm.webp"
+import md from "@/assets/team/md.webp"
+import oh from "@/assets/team/oh.webp"
+import as from "@/assets/team/as.png"
+import bd from "@/assets/team/bd.jpeg"
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
 const team = [
   { name: "Syed Rashid Shuttari", 
     role: "Kibo Group Chairman",
-    photo: chairman, 
+    photo: ch, 
     quote:
       "A visionary entrepreneur and technologist,Oversees operations and partnerships,to empower businesses through technology.",},
 
@@ -82,7 +82,8 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroCity} alt="" width={1920} height={1080} className="h-full w-full object-cover opacity-40" />
+          <img src={heroCity} alt="" loading="eager"
+    fetchPriority="high" decoding="async" width={1920} height={1080} className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/60 to-background" />
         </div>
 
@@ -338,6 +339,8 @@ function Home() {
                         <img
                           src={m.photo}
                           alt={m.name}
+                          loading="lazy"
+                          decoding="async"
                           className="mx-auto h-60 w-44 object-cover rounded-xl border-4 border-primary shadow-lg"
                         />
 

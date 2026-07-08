@@ -1,5 +1,5 @@
-import km from "@/Assets/logos/km.jpeg";
-import kmbg from "@/Assets/bg/kmbg.png";
+import km from "@/assets/logos/km.jpeg";
+import kmbg from "@/assets/bg/kmbg.webp";
 
 import type { Venture } from "../ventures";
 import {

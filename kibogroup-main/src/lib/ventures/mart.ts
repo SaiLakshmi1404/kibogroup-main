@@ -1,5 +1,5 @@
-import kmart from "@/Assets/logos/mart1.png";
-import kmartbg from "@/Assets/bg/kmartbg.png";
+import kmart from "@/assets/logos/mart1.webp";
+import kmartbg from "@/assets/bg/kmartbg.webp";
 
 import type { Venture } from "../ventures";
 import {

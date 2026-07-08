@@ -5,7 +5,7 @@ import Lightbox from "@/components/ui/Lightbox";
 
 // Finds every image inside Assets/kibo-photos
 const images = import.meta.glob(
-  "@/Assets/kibo-photos/**/*.{jpg,jpeg,png}",
+  "@/assets/kibo-photos/**/*.{jpg,jpeg,png,webp}",
   {
     eager: true,
     import: "default",
@@ -146,6 +146,7 @@ function Gallery(){
               >
                   <img
                       src={getCoverImage(it.folder)}
+                      decoding="async"
                       alt={it.title}
                       className="absolute inset-0 h-full w-full object-cover"
                     />
@@ -174,7 +175,7 @@ function Gallery(){
         images={selectedImages}
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
-/>
+     />
 
     </>
   );

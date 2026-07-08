@@ -52,15 +52,7 @@ function VenturePage() {
 
   {/* Background */}
 
-  {/* <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--surface)] via-background to-background" />
 
-  <div
-    className="absolute inset-0 opacity-20"
-    style={{
-      backgroundImage:
-        "radial-gradient(circle at 80% 20%, rgba(212,160,86,0.35) 0%, transparent 50%)",
-    }}
-  /> */}
    <div
     className="absolute inset-0 bg-cover bg-center"
     style={{
@@ -102,6 +94,8 @@ function VenturePage() {
       <img
         src={venture.logo}
         alt={venture.name}
+          
+          decoding="async"
    className="h-14 w-14 object-contain"
       />
 
