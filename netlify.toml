@@ -1,6 +1,6 @@
-[build]
-  base = "kibogroup-main"
-  command = "npm run build"
+# [build]
+  # base = "kibogroup-main"
+  # command = "npm run build"
 
 
-  publish = "dist/client"
+  # publish = "dist/client"
