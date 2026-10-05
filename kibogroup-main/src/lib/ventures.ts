@@ -2,8 +2,9 @@
 import { LucideIcon } from "lucide-react";
 
 
-// import { infraProjects } from "./infraProjects";
-import type { Project } from "./infraProjects";
+import type { Project } from "@/lib/types";
+// import type { Project } from "./infraProjects";
+// import type { Project } from "./florenciaPerfume";
 
 
 import { tech } from "./ventures/tech";
@@ -13,6 +14,9 @@ import { mart } from "./ventures/mart";
 import { fashion } from "./ventures/fashion";
 import { music } from "./ventures/music";
 import { events } from "./ventures/events";
+import { florencia } from "./ventures/florencia";
+import { ador } from "./ventures/ador";
+
 
 import type { IconName } from "./iconMap";
 
@@ -33,6 +37,8 @@ export const ventures: Venture[] = [
   fashion,
   music,
   events,
+  florencia,
+  ador,
 ];
 
 
@@ -52,7 +58,13 @@ export type Venture = {
   mission: string;
   vision: string;
  featuredProjects?: Project[];
+ 
   companyOverview: {
+  title: string;
+  description: string;
+};
+
+ distribution?: {
   title: string;
   description: string;
 };
@@ -66,12 +78,12 @@ process: {
   description: string;
 }[];
 
-faqs: {
+faqs?: {
   question: string;
   answer: string;
 }[];
 
-cta: {
+cta?: {
   title: string;
   description: string;
   button: string;

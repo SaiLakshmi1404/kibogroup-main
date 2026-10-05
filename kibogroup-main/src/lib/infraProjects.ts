@@ -17,13 +17,9 @@ import f13 from "@/assets/infra/f13.webp";
 import f14 from "@/assets/infra/f14.webp";
 import f15 from "@/assets/infra/f15.webp";
 
+import type { Project } from "./types";
 
 
-export interface Project {
-    // title: string;
-    // category: string;
-    image: string;
-}
 
 export const infraProjects : Project[]= [
 

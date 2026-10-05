@@ -1,10 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Mail, Phone, MapPin, CheckCircle2, Layers, Building2, Sparkles, Cpu } from "lucide-react";
 import { getVenture, ventures } from "@/lib/ventures";
-import FeaturedProjects from "@/components/FeaturedProjects";
+
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 // import type { Venture } from "@lib/ventures";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import GlimpseInside from "@/components/GlimpseInside";
 import ServicesOffered from "@/components/ServicesOffered";
 
@@ -358,6 +359,9 @@ function VenturePage() {
 </section>
 
 {/* FAQ */}
+
+
+{venture.faqs && (
 <section className="section-y bg-secondary/30 border-y border-border">
 
   <div className="container-page max-w-4xl">
@@ -429,7 +433,7 @@ function VenturePage() {
   </div>
 
 </section>
-
+)}
 
       {/* <section className="section-y border-t border-border">
         <div className="container-page">
@@ -489,6 +493,8 @@ function VenturePage() {
 
   {/* CTA */}
 
+  {venture.cta && (
+
 <section className="section-y">
 
   <div className="container-page">
@@ -515,6 +521,7 @@ function VenturePage() {
   </div>
 
 </section>
+  )}
 </>
 
   );

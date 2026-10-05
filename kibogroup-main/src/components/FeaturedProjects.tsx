@@ -1,11 +1,7 @@
 import { ArrowRight } from "lucide-react";
+import type { Project } from "@/lib/types";
 
 
-interface Project {
-  // title: string;
-  image: string;
-  // category: string;
-}
 
 interface FeaturedProjectsProps {
   title?: string;
